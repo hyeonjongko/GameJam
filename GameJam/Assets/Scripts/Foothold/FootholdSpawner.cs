@@ -62,7 +62,6 @@ public class FootholdSpawner : MonoBehaviour
         newPos.x += _currentDirection * _distanceX;
         newPos.y += _distanceY;
 
-        Debug.Log($"계단 생성 - 방향: {_currentDirection}, 위치: {newPos}, 카운터: {_footholdInCurrentDirection}/{_footholdBeforeDirectionChange}");
 
         // 🟢 X축 범위 체크: -9 ~ 9를 벗어나면 강제로 방향 전환
         if (newPos.x < -9f || newPos.x > 9f)
