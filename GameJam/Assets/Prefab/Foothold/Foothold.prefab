@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8253858077180166006}
   - component: {fileID: 9119113176617481120}
   - component: {fileID: 3309544039636174239}
+  - component: {fileID: -4877945933869701358}
   m_Layer: 0
   m_Name: Foothold
   m_TagString: Untagged
@@ -183,3 +184,16 @@ PolygonCollider2D:
       - {x: 0.39666668, y: -0.083333336}
       - {x: 0.43, y: -0.023333333}
   m_UseDelaunayMesh: 0
+--- !u!114 &-4877945933869701358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561987327185736548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b1287b93e52b04889dc0096905d336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
