@@ -28,6 +28,10 @@ public class FootholdSpawner : MonoBehaviour
 
     //플레이어가 마지막 계단으로부터 접근하면 계단을 생성하는 거리
     private float _newFootholdDistance = 11.0f;
+
+    //계단이 생성되는 X축의 범위
+    private float __footholdMinX = 9.0f;
+    private float __footholdMaxX = -9.0f;
     void Start()
     {
         _lastFootholdPos = Vector3.zero;
@@ -60,23 +64,22 @@ public class FootholdSpawner : MonoBehaviour
 
         Debug.Log($"계단 생성 - 방향: {_currentDirection}, 위치: {newPos}, 카운터: {_footholdInCurrentDirection}/{_footholdBeforeDirectionChange}");
 
+        // 🟢 X축 범위 체크: -9 ~ 9를 벗어나면 강제로 방향 전환
+        if (newPos.x < -9f || newPos.x > 9f)
+        {
+            // 방향 반전
+            _currentDirection *= _change;
+
+            // 위치를 다시 계산 (반대 방향으로)
+            newPos.x = _lastFootholdPos.x + _currentDirection * _distanceX;
+
+            // 카운터 및 목표 개수 초기화
+            _footholdInCurrentDirection = _reset;
+            _footholdBeforeDirectionChange = Random.Range(_footholdMinCount, _footholdMaxCount);
+        }
+
         FootholdFactory footholdFactory = GameObject.Find("FootholdFactory").GetComponent<FootholdFactory>();
         GameObject foothold = footholdFactory.MakeFoothold(newPos);
-
-        _lastFootholdPos = newPos;
-
-        _footholdInCurrentDirection++;
-
-        if (_footholdInCurrentDirection >= _footholdBeforeDirectionChange)
-        {
-            _currentDirection *= _change; //방향 전환
-
-            _footholdInCurrentDirection = _reset;
-
-            //다음 방향 전환까지의 계단 개수를 다시 랜덤으로 설정
-            _footholdBeforeDirectionChange = Random.Range(_footholdMinCount, _footholdMaxCount);
-
-        }
 
         if (foothold == null)
         {
@@ -92,5 +95,19 @@ public class FootholdSpawner : MonoBehaviour
             }
         }
 
+        _lastFootholdPos = newPos;
+
+        _footholdInCurrentDirection++;
+
+        if (_footholdInCurrentDirection >= _footholdBeforeDirectionChange)
+        {
+            _currentDirection *= _change; //방향 전환
+
+            _footholdInCurrentDirection = _reset;
+
+            //다음 방향 전환까지의 계단 개수를 다시 랜덤으로 설정
+            _footholdBeforeDirectionChange = Random.Range(_footholdMinCount, _footholdMaxCount);
+
+        }
     }
 }

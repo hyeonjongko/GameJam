@@ -670,7 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 405947993}
   - component: {fileID: 405947994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background_Night
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1229,12 +1229,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 6.2, y: 23, z: 50}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2103138806}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &527904020
 GameObject:
@@ -1246,7 +1246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527904021}
   - component: {fileID: 527904022}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background_Day
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000c39fae8e
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1985,7 +1985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 919264017}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Backgrounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3684,7 +3684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1749234667}
   - component: {fileID: 1749234668}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background_Space
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4416,6 +4416,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1194144925}
+  - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &2115873831
@@ -4509,7 +4510,6 @@ SpriteRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 2103138806}
   - {fileID: 919264017}
