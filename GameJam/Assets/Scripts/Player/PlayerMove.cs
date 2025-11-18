@@ -95,7 +95,7 @@ public class PlayerMove : MonoBehaviour
         transform.position = _beforePos;
         _moveCount++;
 
-        //Player.CheckFoothold();
+        //player.CheckFoothold();
     }
     void CheckGroundByPosition()
     {
