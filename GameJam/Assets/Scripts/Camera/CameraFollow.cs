@@ -1,23 +1,23 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;    // ÇÃ·¹ÀÌ¾î
+    public Transform target;    // í”Œë ˆì´ì–´
     public float smoothSpeed = 5f;
-    public Vector3 offset;      // Ä«¸Ş¶ó¿Í ÇÃ·¹ÀÌ¾î °Å¸®
+    public Vector3 offset;      // ì¹´ë©”ë¼ì™€ í”Œë ˆì´ì–´ ê±°ë¦¬
 
     private void LateUpdate()
     {
         if (target == null) return;
 
-        // ÇÃ·¹ÀÌ¾î ±âÁØÀ¸·Î Ä«¸Ş¶ó°¡ °¡¿îµ¥ ¿Àµµ·Ï À§Ä¡ °è»ê
+        // í”Œë ˆì´ì–´ ê¸°ì¤€ìœ¼ë¡œ ì¹´ë©”ë¼ê°€ ê°€ìš´ë° ì˜¤ë„ë¡ ìœ„ì¹˜ ê³„ì‚°
         Vector3 targetPos = new Vector3(
-            target.position.x + offset.x,        // X´Â °íÁ¤ (¹«ÇÑÀÇ °è´ÜÀº ÁÂ¿ì ¿òÁ÷ÀÓ ¾øÀ½)
+            target.position.x + offset.x,        // XëŠ” ê³ ì • (ë¬´í•œì˜ ê³„ë‹¨ì€ ì¢Œìš° ì›€ì§ì„ ì—†ìŒ)
             target.position.y + offset.y,
             transform.position.z
         );
 
-        // ºÎµå·´°Ô µû¶ó°¡±â
+        // ë¶€ë“œëŸ½ê²Œ ë”°ë¼ê°€ê¸°
         transform.position = Vector3.Lerp(transform.position, targetPos, smoothSpeed * Time.deltaTime);
     }
 }

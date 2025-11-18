@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private Vector3 _checkOffset = new Vector3(0, -0.4f, 0);
     [SerializeField] private float _checkRadius;
     [SerializeField] private string _groundTag = "Foothold";
+
+    public AudioClip MoveSound;
 
     private bool isGrounded;
     void Start()
@@ -95,7 +98,7 @@ public class PlayerMove : MonoBehaviour
         transform.position = _beforePos;
         _moveCount++;
 
-        //player.CheckFoothold();
+        SoundManager.Instance.PlaySound(MoveSound);
     }
     void CheckGroundByPosition()
     {
