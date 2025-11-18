@@ -30,8 +30,8 @@ public class FootholdSpawner : MonoBehaviour
     private float _newFootholdDistance = 11.0f;
 
     //계단이 생성되는 X축의 범위
-    private float __footholdMinX = 9.0f;
-    private float __footholdMaxX = -9.0f;
+    private float __footholdMinX = -8.0f;
+    private float __footholdMaxX = 8.0f;
     void Start()
     {
         _lastFootholdPos = Vector3.zero;
@@ -62,10 +62,9 @@ public class FootholdSpawner : MonoBehaviour
         newPos.x += _currentDirection * _distanceX;
         newPos.y += _distanceY;
 
-        Debug.Log($"계단 생성 - 방향: {_currentDirection}, 위치: {newPos}, 카운터: {_footholdInCurrentDirection}/{_footholdBeforeDirectionChange}");
 
-        // 🟢 X축 범위 체크: -9 ~ 9를 벗어나면 강제로 방향 전환
-        if (newPos.x < -9f || newPos.x > 9f)
+        // X축 범위 체크: -9 ~ 9를 벗어나면 강제로 방향 전환
+        if (newPos.x < __footholdMinX || newPos.x > __footholdMaxX)
         {
             // 방향 반전
             _currentDirection *= _change;
