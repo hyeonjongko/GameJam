@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
@@ -31,6 +32,9 @@ public class PlayerMove : MonoBehaviour
     public AudioClip MoveSound;
 
     private bool isGrounded;
+
+    [Header("이벤트")]
+    public UnityEvent OnMove;
     void Start()
     {
         _anim = GetComponent<Animator>();
@@ -79,6 +83,7 @@ public class PlayerMove : MonoBehaviour
             gameObject.transform.rotation = Quaternion.Euler(_playerSeeLeft);
         }
     }
+
     public void Move()
     {
         if (_isTurn == true)
@@ -99,6 +104,8 @@ public class PlayerMove : MonoBehaviour
         _moveCount++;
 
         SoundManager.Instance.PlaySound(MoveSound);
+
+        OnMove?.Invoke();
     }
     void CheckGroundByPosition()
     {
