@@ -9,7 +9,7 @@ public class FootholdFactory : MonoBehaviour
     [SerializeField] private GameObject _footholdPrefab;
 
     [Header("풀링")]
-    public int PoolSize = 30;
+    public int PoolSize = 60;
     private GameObject[] _footholdObjectPool;
 
     private void Awake()

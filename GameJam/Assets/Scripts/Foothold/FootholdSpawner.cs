@@ -27,11 +27,11 @@ public class FootholdSpawner : MonoBehaviour
     private int _reset = 0;
 
     //플레이어가 마지막 계단으로부터 접근하면 계단을 생성하는 거리
-    private float _newFootholdDistance = 11.0f;
+    private float _newFootholdDistance = 10.0f;
 
     //계단이 생성되는 X축의 범위
-    private float __footholdMinX = -8.0f;
-    private float __footholdMaxX = 8.0f;
+    private float __footholdMinX = -7.0f;
+    private float __footholdMaxX = 7.0f;
     void Start()
     {
         _lastFootholdPos = Vector3.zero;
@@ -63,7 +63,7 @@ public class FootholdSpawner : MonoBehaviour
         newPos.y += _distanceY;
 
 
-        // X축 범위 체크: -9 ~ 9를 벗어나면 강제로 방향 전환
+        // X축 범위 체크: 범우;를 벗어나면 강제로 방향 전환
         if (newPos.x < __footholdMinX || newPos.x > __footholdMaxX)
         {
             // 방향 반전

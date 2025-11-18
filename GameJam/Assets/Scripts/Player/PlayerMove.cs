@@ -43,6 +43,7 @@ public class PlayerMove : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             PlayerTurn();
+            Move();
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
