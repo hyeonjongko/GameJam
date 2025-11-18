@@ -2,7 +2,7 @@
 
 public class FootholdSpawner : MonoBehaviour
 {
-    public Transform player;
+    public Transform Player;
 
     private Vector3 _lastFootholdPos; //마지막으로 생성되는 계단의 위치를 저장
 
@@ -13,7 +13,7 @@ public class FootholdSpawner : MonoBehaviour
     private int _footholdBeforeDirectionChange; // 방향을 바꾸기 전에 생성할 계단의 총 개수
 
     //랜덤으로 생성할 계단의 범위
-    private int _footholdMinCount = 3;
+    private int _footholdMinCount = 1;
     private int _footholdMaxCount = 8;
 
     //다음 계단과 이전 계단의 거리
@@ -51,7 +51,7 @@ public class FootholdSpawner : MonoBehaviour
     {
         // 플레이어가 마지막 계단으로부터 접근하면
         // 새로운 계단을 생성 (무한 생성 효과)
-        if (player.position.y > _lastFootholdPos.y - _newFootholdDistance)
+        if (Player.position.y > _lastFootholdPos.y - _newFootholdDistance)
         {
             GenerateNextFoothold();
         }
@@ -90,7 +90,7 @@ public class FootholdSpawner : MonoBehaviour
             Foothold footholdScript = foothold.GetComponent<Foothold>();
             if (footholdScript != null)
             {
-                footholdScript.player = player;
+                footholdScript.Player = Player;
             }
         }
 

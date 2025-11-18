@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5743467402172085865}
   - component: {fileID: 8253858077180166006}
-  - component: {fileID: 9119113176617481120}
-  - component: {fileID: 3309544039636174239}
   - component: {fileID: -4877945933869701358}
-  m_Layer: 0
+  - component: {fileID: 9119113176617481120}
+  - component: {fileID: 3727510196119177782}
+  m_Layer: 7
   m_Name: Foothold
-  m_TagString: Untagged
+  m_TagString: Foothold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,6 +90,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4877945933869701358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561987327185736548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b1287b93e52b04889dc0096905d336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!50 &9119113176617481120
 Rigidbody2D:
   serializedVersion: 5
@@ -117,7 +130,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &3309544039636174239
+--- !u!60 &3727510196119177782
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,13 +178,12 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.43, y: 0.016666668}
       - {x: 0.4166667, y: 0.030000001}
-      - {x: 0.37034377, y: 0.06982833}
-      - {x: 0.31563538, y: 0.054264963}
-      - {x: 0.1672228, y: 0.002564907}
-      - {x: 0.027639031, y: 0.002564907}
-      - {x: -0.20267276, y: 0.0038809776}
-      - {x: -0.3011847, y: 0.049602017}
-      - {x: -0.3651062, y: 0.08550921}
+      - {x: 0.39666668, y: 0.05666667}
+      - {x: 0.23666668, y: 0.17666668}
+      - {x: 0.05666667, y: 0.25}
+      - {x: -0.05, y: 0.25}
+      - {x: -0.13666667, y: 0.22333334}
+      - {x: -0.29666668, y: 0.15}
       - {x: -0.39000002, y: 0.07666667}
       - {x: -0.43, y: 0.043333333}
       - {x: -0.43, y: -0.030000001}
@@ -184,16 +196,3 @@ PolygonCollider2D:
       - {x: 0.39666668, y: -0.083333336}
       - {x: 0.43, y: -0.023333333}
   m_UseDelaunayMesh: 0
---- !u!114 &-4877945933869701358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561987327185736548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50b1287b93e52b04889dc0096905d336, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
