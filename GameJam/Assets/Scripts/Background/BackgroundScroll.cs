@@ -5,6 +5,7 @@ public class BackgroundScroll : MonoBehaviour
     public GameObject[] Backgrounds; // 배경 3개를 Inspector에서 할당
     public Transform Player; // 플레이어를 Inspector에서 할당
     public float BackgroundHeight; // 배경 하나의 높이
+    public Transform MainCamera; // 메인 카메라를 Inspector에서 할당
 
     void Start()
     {
@@ -27,8 +28,11 @@ public class BackgroundScroll : MonoBehaviour
         // 각 배경이 플레이어보다 충분히 아래에 있는지 체크
         foreach (GameObject bg in Backgrounds)
         {
+            float bgX = MainCamera.position.x; // 카메라의 X 위치를 배경의 X 위치로 설정
+            float bgY = bg.transform.position.y;
+
             // 플레이어가 배경보다 충분히 위로 올라갔으면
-            if (Player.position.y > bg.transform.position.y + BackgroundHeight)
+            if (Player.position.y > bgY + BackgroundHeight)
             {
                 // 가장 위에 있는 배경 찾기
                 float maxY = float.MinValue;
@@ -39,10 +43,10 @@ public class BackgroundScroll : MonoBehaviour
                         maxY = otherBg.transform.position.y;
                     }
                 }
-
-                // 가장 위 배경 바로 위에 재배치
-                bg.transform.position = new Vector3(bg.transform.position.x, maxY + BackgroundHeight, bg.transform.position.z);
+                bgY = maxY + BackgroundHeight;
             }
+            // 가장 위 배경 바로 위에 재배치
+            bg.transform.position = new Vector3(bgX, bgY, bg.transform.position.z);
         }
     }
 }

@@ -4786,6 +4786,7 @@ MonoBehaviour:
   - {fileID: 1749234666}
   Player: {fileID: 736708257}
   BackgroundHeight: 10
+  MainCamera: {fileID: 519420032}
 --- !u!4 &1996142760
 Transform:
   m_ObjectHideFlags: 0
