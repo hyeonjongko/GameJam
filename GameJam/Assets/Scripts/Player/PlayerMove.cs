@@ -55,7 +55,9 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (!isGrounded && _moveCount > 0) return;
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             PlayerTurn();
             Move();
@@ -74,6 +76,7 @@ public class PlayerMove : MonoBehaviour
                 Debug.Log("발판 없음! 떨어짐!");
                 rb.gravityScale = 1.0f; // 중력 활성화
                 _camerafollow.SetGameOver();
+
             }
         }
     }
