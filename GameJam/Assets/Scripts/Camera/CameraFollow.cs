@@ -6,9 +6,11 @@ public class CameraFollow : MonoBehaviour
     public float smoothSpeed = 5f;
     public Vector3 offset;      // 카메라와 플레이어 거리
 
+    public bool isGameOver = false;
+
     private void LateUpdate()
     {
-        if (target == null) return;
+        if (target == null || isGameOver) return;
 
         // 플레이어 기준으로 카메라가 가운데 오도록 위치 계산
         Vector3 targetPos = new Vector3(
@@ -19,5 +21,10 @@ public class CameraFollow : MonoBehaviour
 
         // 부드럽게 따라가기
         transform.position = Vector3.Lerp(transform.position, targetPos, smoothSpeed * Time.deltaTime);
+    }
+
+    public void SetGameOver()
+    {
+        isGameOver = true;
     }
 }

@@ -986,7 +986,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.4
+  orthographic size: 5.38
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1032,6 +1032,7 @@ MonoBehaviour:
   target: {fileID: 736708257}
   smoothSpeed: 5
   offset: {x: 0, y: 0, z: 0}
+  isGameOver: 0
 --- !u!1 &527904020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1752,9 @@ MonoBehaviour:
   _checkRadius: 0.3
   _groundTag: Foothold
   MoveSound: {fileID: 8300000, guid: be6af64f0cf66ff449a4169d6a0966d4, type: 3}
+  OnMove:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &736708257
 Transform:
   m_ObjectHideFlags: 0

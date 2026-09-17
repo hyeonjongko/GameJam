@@ -6,7 +6,7 @@ public class TimeSlider : MonoBehaviour
     Slider _slider;
     private float _Time;
 
-    private float _add = 1.0;
+    private float _add = 1.0f;
     void Start()
     {
         _slider = GetComponent<Slider>();

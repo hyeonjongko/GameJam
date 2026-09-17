@@ -8,6 +8,10 @@ public class PlayerMove : MonoBehaviour
 
     Player player;
 
+    Rigidbody2D rb;
+
+    CameraFollow _camerafollow;
+
     private Vector3 _startPos;
     private Vector3 _beforePos;
 
@@ -40,6 +44,10 @@ public class PlayerMove : MonoBehaviour
         _anim = GetComponent<Animator>();
         player = GetComponent<Player>();
 
+        _camerafollow = Camera.main.GetComponent<CameraFollow>();
+
+        rb = GetComponent<Rigidbody2D>();
+
         _startPos = transform.position;
         _beforePos = transform.localPosition;
     }
@@ -64,7 +72,8 @@ public class PlayerMove : MonoBehaviour
             if (!isGrounded)
             {
                 Debug.Log("발판 없음! 떨어짐!");
-                
+                rb.gravityScale = 1.0f; // 중력 활성화
+                _camerafollow.SetGameOver();
             }
         }
     }
@@ -74,12 +83,12 @@ public class PlayerMove : MonoBehaviour
 
         if(_isTurn == true)
         {
-            //(0,0,0)으로
+            //Y축을 0으로
             gameObject.transform.rotation = Quaternion.Euler(_playerSeeRight);
         }
         else
         {
-            //(0,-180,0)으로
+            //Y축을 -180으로
             gameObject.transform.rotation = Quaternion.Euler(_playerSeeLeft);
         }
     }
